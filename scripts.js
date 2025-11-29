@@ -10,15 +10,22 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    const li = createElement("li");
+    li.innerHTML = b`
+< input type ="checkbox" class="checkbox">
+<span>${taskText}</span>
+`;
+
     const li = document.createElement("li");
     li.textContent = taskText;
     taskList.appendChild(li);
     taskInput.value = "";
+    toggleEmptyState();
   };
   addTaskBtn.addEventListener("click", addTask);
-  taskInput.addEventListener('keypress', () => {
-    if(else.key ==='Enter') {
-        addTask(e);
+  taskInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      addTask(e);
     }
-  })
+  });
 });
