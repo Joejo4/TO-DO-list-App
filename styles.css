@@ -90,7 +90,8 @@ body {
 #task-list li {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  gap: 12px;
   background: rgba(255, 255, 255, 0.18);
   margin-bottom: 10px;
   padding: 8px 10px;
@@ -102,4 +103,195 @@ body {
 }
 #task-list li:hover {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Make the todos container and list items match the input width */
+.todos-container {
+  width: 100%;
+}
+
+/* reset list padding */
+#task-list {
+  padding: 0;
+  list-style: none;
+}
+
+#task-list li > .task-text {
+  flex: 1 1 auto;
+  margin-right: 12px;
+  color: #000;
+  text-align: left;
+  word-break: break-word;
+}
+
+#task-list li > .task-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+#task-list li input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  margin-right: 6px;
+}
+
+#task-list li button {
+  background: transparent;
+  border: none;
+  color: #4e4d4d;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+#task-list li button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* SMALL PHONES (480px)  */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 0 10px;
+    height: 100vh;
+  }
+
+  .Todo-App {
+    max-width: 100%;
+    padding: 1rem;
+    gap: 15px;
+    border-radius: 15px;
+  }
+
+  .Todo-App h1 {
+    font-size: 1.75rem;
+    margin-bottom: 5px;
+  }
+
+  .input-area {
+    width: 100%;
+    gap: 6px;
+  }
+
+  .input-area input {
+    padding: 8px 10px;
+    font-size: 0.95rem;
+    border-radius: 6px;
+  }
+
+  .input-area button {
+    padding: 5px;
+    font-size: 0.9rem;
+    margin-left: 6px;
+  }
+
+  .todos-container {
+    max-height: calc(100vh - 280px);
+    overflow-y: auto;
+  }
+
+  #task-list li {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+    gap: 8px;
+    margin-bottom: 6px;
+    border-radius: 20px;
+  }
+
+  #task-list li > .task-text {
+    margin-right: 6px;
+    font-size: 0.85rem;
+  }
+
+  #task-list li input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    flex-shrink: 0;
+  }
+
+  #task-list li button {
+    padding: 3px;
+    font-size: 0.8rem;
+  }
+}
+
+/*  MOBILE DEVICES (768px) */
+@media (max-width: 768px) {
+  .Todo-App {
+    max-width: 95%;
+    padding: 1.5rem;
+    gap: 20px;
+  }
+
+  .Todo-App h1 {
+    font-size: 2rem;
+  }
+
+  .input-area {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .input-area input {
+    padding: 8px 12px;
+    font-size: 1rem;
+  }
+
+  .input-area button {
+    padding: 6px;
+    font-size: 1rem;
+    margin-left: 8px;
+  }
+
+  #task-list li {
+    font-size: 1rem;
+    padding: 10px 12px;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  #task-list li > .task-text {
+    margin-right: 8px;
+    font-size: 0.95rem;
+  }
+
+  #task-list li input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+  }
+
+  #task-list li button {
+    padding: 4px;
+    font-size: 0.9rem;
+  }
+}
+
+/*MEDIUM DEVICES (1024px)*/
+@media (min-width: 769px) and (max-width: 1024px) {
+  .Todo-App {
+    max-width: 500px;
+    padding: 2rem;
+    gap: 25px;
+  }
+
+  .Todo-App h1 {
+    font-size: 2.2rem;
+  }
+
+  .input-area input {
+    padding: 10px 15px;
+    font-size: 1rem;
+  }
+
+  #task-list li {
+    font-size: 1.1rem;
+    padding: 10px 12px;
+  }
 }
